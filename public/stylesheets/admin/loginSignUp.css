@@ -1,0 +1,161 @@
+:root {
+    --container-bg: #fff;
+    --text-white: rgb(255, 255, 255);
+    --login-left-bg: #1b75ea;
+    --login-left-bg-opacity: #3e83f3;
+    --white-opacity-text: rgba(255, 255, 255, 0.743);
+    --form-label-text: #595353;
+}
+
+::selection {
+    background-color: #fff;
+    color: var(--login-left-bg);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.admin-login-signup-left {
+    margin: 0 0 0 auto;
+    background-color: var(--login-left-bg);
+    color: var(--text-white);
+    padding: 3em 0 0 0em;
+    box-shadow: 0px 10px 20px 2px rgb(0 0 0 / 20%);
+}
+
+.admin-login-signup-left-text {
+    width: 100%;
+    padding-left: 2em;
+}
+
+.login-signup-left-text p {
+    font-size: 14px;
+    color: var(--white-opacity-text);
+    margin-top: 1em;
+}
+
+.admin-login-signup-left .admin-login-signup-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50%;
+}
+
+.admin-login-signup-left img {
+    width: 10em;
+    height: 10em;
+}
+
+.admin-login-signup-right {
+    /* display: flex;
+    justify-content: center; */
+    margin: 0 auto 0 0;
+    box-shadow: 5px 10px 20px 2px rgb(0 0 0 / 20%);
+}
+
+.admin-login-signup-right form {
+    margin-top: 4em;
+    padding: 0 5em 0 5em;
+    width: 100%;
+}
+
+.admin-input-group {
+    width: 100%;
+    position: relative;
+    margin-top: 2.5em;
+}
+
+.admin-form-input {
+    width: 100%;
+    height: 2.5em;
+    border: none;
+    border-bottom: 2px solid;
+    outline: none;
+}
+
+.admin-form-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    transition: transform .5s;
+    color: var(--form-label-text);
+    font-size: 14px;
+    cursor: text;
+}
+
+.admin-form-input:is(:focus, :valid) {
+    border-bottom: 3px solid var(--login-left-bg);
+}
+
+.admin-form-input:is(:focus, :valid)+.admin-form-labels {
+    transform: translate(3px, -14px);
+}
+
+.admin-show-hide-password {
+    position: relative;
+    top: -1.5em;
+    left: 93%;
+    cursor: pointer;
+}
+
+.admin-terms-and-policy {
+    width: 100%;
+    font-size: 12px;
+    margin-top: 3em;
+}
+
+.admin-button-sec {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.admin-button-sec button {
+    width: 90%;
+    height: 3em;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: var(--login-left-bg);
+    box-shadow: 8px 5px 25px 1px rgb(0 0 0 / 28%);
+    color: var(--text-white);
+    margin-bottom: 2em;
+    transition: all .25s;
+}
+
+.admin-button-sec button:hover {
+    background-color: var(--login-left-bg-opacity);
+}
+
+.admin-link-to-signup-login {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.admin-login-signup-right a {
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(129, 172, 240);
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .admin-login-signup-right {
+        margin: 0;
+
+    }
+
+    .admin-login-signup-right form {
+        padding: 0 1em 0 1em;
+    }
+}

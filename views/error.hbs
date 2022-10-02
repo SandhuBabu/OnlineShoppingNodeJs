@@ -1,0 +1,107 @@
+{{!-- <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <p>Sorry, An Error Ocuured</p>
+    <a class="go-home" href="/">Go Home</a>
+</div> --}}
+
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+
+    .loader {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #212122;
+    }
+
+    .loader span {
+        border: 0;
+        margin: 0;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        background-color: #ff6666;
+        position: absolute;
+        transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        animation: spin 2s ease infinite;
+
+    }
+
+    .loader :first-child {
+        background-color: rgb(42, 255, 4);
+        animation-delay: -1.5s;
+    }
+
+    .loader :nth-child(2) {
+        background-color: #fcd600;
+
+        animation-delay: -1s;
+    }
+
+    .loader :nth-child(3) {
+        background-color: darkorchid;
+
+        animation-delay: -.5s;
+    }
+
+    .loader :last-child {
+        background-color: deeppink;
+    }
+
+    .go-home {
+        position: fixed;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: #fff !important;
+        background-color: #1b75ea !important;
+        padding: .6em 2em;
+        border-radius: 10px;
+    }
+
+    p {
+        color: #fff;
+        position: absolute;
+        top: 3em;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: .1em;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: translate(0) scale(0);
+        }
+
+        25% {
+            transform: translate(250%) scale(2.5);
+        }
+
+        50% {
+            transform: translate(250%, 250%) scale(0);
+        }
+
+        75% {
+            transform: translate(0, 250%) scale(2.5);
+        }
+
+        100% {
+            transform: translate(0), scale(0);
+        }
+    }
+</style>
+
+
+<h1>{{message}}</h1>
+<h2>{{error.status}}</h2>
+<pre>{{error.stack}}</pre>

@@ -1,0 +1,49 @@
+<div class="container-fluid" style="height: 100vh;">
+    <div class="row mt-5 p-2" style="min-height: 80vh;">
+        <div class="col-md-3  admin-login-signup-left">
+            <div class="admin-login-signup-left-text">
+                <h2>Login As Admin</h2>
+                <p>
+                    Let your skills pay you !!!
+                </p>
+            </div>
+            <div class="admin-login-signup-image">
+                <img src="/staticImages/loginSignUp.png" alt="image">
+            </div>
+        </div>
+        <div class="col-md-6 admin-login-signup-right">
+            <form action="/admin/login" method="post" autocomplete="off">
+                <div class="admin-input-group">
+                    <input type="text" name="email" class="admin-form-input" required>
+                    <label for="email" class="admin-form-labels">Email Address</label>
+                </div>
+
+                <div class="admin-input-group">
+                    <input type="password" name="password" class="admin-form-input admin-password-inp" required>
+                    <label for="password" class="admin-form-labels">Password</label>
+                </div>
+
+                {{#if loginErr}}
+                <p class="login-error">{{loginErr}}</p>
+                {{/if}}
+
+
+                <div class="admin-terms-and-policy">
+                    <p>
+                        By continuing, you agree to Homely's Terms of Use and Privacy Policy.
+                    </p>
+                </div>
+
+                <div class="admin-button-sec">
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="admin-link-to-signup-login mt-1">
+                    <a href="/admin/signup" class="admin-text-center">
+                        New admin? Signup
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

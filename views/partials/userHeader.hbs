@@ -1,0 +1,159 @@
+<header>
+    <nav>
+        <div class="topbar">
+            <div class="topbar-left">
+                <div class="topbar-menu-icon-sec">
+                    <i class='bx bx-menu menu-top' title="Menu" onclick="showOrHideSideBar()"></i>
+                </div>
+                <div class="topbar-logo-sec">
+                    <a href="/"><img class="logo-top" title="Home" src="/staticImages/topbarLogo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="topbar-right">
+                {{#if user}}
+                <div class="login-btn-sec">
+                    <a href="/userDetails/{{user.name}}" title="{{user.name}}"><span
+                            class="topbar-user">{{user.name}}</span></a>
+                </div>
+                {{else}}
+                <div class="login-btn-sec">
+                    <a href="/login" class="topbar-login-btn" id="topbar-login">Login</a>
+                </div>
+                {{/if}}
+
+                <div class="serach-icon-sec">
+                    <i class='bx bx-search-alt-2 search-top' title="Search" onclick="showOrHideTopBarSearchForm()"></i>
+                    <i class='bx bxs-help-circle search-top' title="About Us" style="margin-left: 1em; opacity:.8;"></i>
+                </div>
+            </div>
+        </div>
+        <form action="/search" method="post" class="topbar-form">
+            <div class="search-input">
+                <input name="name" value="{{keyword}}" type="text" id="search-input-box"
+                    placeholder="Search by product name or category">
+            </div>
+            <div class="search-btn-close-btn">
+                <button onclick="checkSearch()" type="submit" class="form-btn-search"><i
+                        class='bx bx-search-alt-2 search-btn' title="Search"></i></button>
+            </div>
+        </form>
+    </nav>
+
+    <div class="sidebar">
+        <div class="brand-and-close">
+            <a href="/"><img class="sidebar-logo" title="Home" src="/staticImages/sidebar-logo.png" alt=""></a>
+            <div class="sidebar-close-sec">
+                <i class='bx bx-x close-sidebar' title="Close" onclick="showOrHideSideBar()"></i>
+            </div>
+        </div>
+
+        <table class="sidebar-menu-table">
+            <tr>
+                <td class="home-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/">
+                        <i class='bx bx-home menu-icons'></i>
+                        <span class="menu-name">HOME</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="category-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/category">
+                        <i class='bx bx-grid-alt menu-icons'></i>
+                        <span class="menu-name">CATEGORY</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="orders-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/orders">
+                        <i class='bx bx-shopping-bag menu-icons'></i>
+                        <span class="menu-name">ORDERS</span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="cart-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/cart">
+                        <i class='bx bx-cart menu-icons'></i>
+                        <span class="menu-name">WISHLIST</span></a>
+                </td>
+            </tr>
+            {{#if user}}
+            <tr>
+                <td class="account-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/userDetails/{{user.name}}">
+                        <i class='bx bx-user menu-icons'></i>
+                        <span class="menu-name">ACCOUNT</span>
+                    </a>
+                </td>
+            </tr>
+            {{/if}}
+            {{#if user}}
+            <tr>
+                <td class="logout-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/logout" title="Logout {{user.name}}" onclick="return confirm('Are you sure to Logout')">
+                        <i class='bx bx-log-out menu-icons'></i>
+                        <span class="menu-name">LOGOUT</span>
+                    </a>
+                </td>
+            </tr>
+            {{/if}}
+
+            {{#unless user}}
+            <tr class="login-sidebar">
+                <td class="login-sidebar">
+                    <span class="sidebar-round-span"></span>
+                    <a href="/login">
+                        <i class='bx bx-exit menu-icons'></i>
+                        <span class="menu-name">LOGIN</span>
+                    </a>
+                </td>
+            </tr>
+            {{/unless}}
+        </table>
+
+        {{#if user}}
+        <div class="user-wrapper">
+            <div class="user-info">
+                <div class="profile-picture-sidebar">
+                    <img src="https://cdn3.iconfinder.com/data/icons/flat-pro-user-management-set-4/32/user-profile-512.png"
+                        alt="">
+                </div>
+                <div class="profile-details" title="{{user.name}}">
+                    {{user.name}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+</header>
+
+
+<style>
+    @media only screen and (max-width: 300px) {
+        .bxs-help-circle {
+            display: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 797px) {
+         .topbar-logo-sec a {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    let aboutUs = document.querySelector('.bxs-help-circle');
+    aboutUs.addEventListener('click', (e) => {
+        window.scrollTo(0, document.body.scrollHeight);
+    })
+</script>

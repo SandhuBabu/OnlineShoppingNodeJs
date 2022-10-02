@@ -1,0 +1,153 @@
+<div class="container" style="min-height: 100vh;">
+    <form method="post" id="checkout-form" action="" class="payment-details-form">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="delivery-payment-details-head">Delivery Details</h3>
+                <div class="delivery-details-input-sec">
+                    <input name="name" type="text" id="name" class="delivery-details-input" required>
+                    <label for="name" class="delivery-label">Name</label>
+                </div>
+                <div class="delivery-details-input-sec">
+                    <input name="" type="text" id="" class="delivery-details-input" required>
+                    <label for="" class="delivery-label">Phone Number</label>
+                </div>
+                <div class="delivery-details-input-sec">
+                    <input name="address" type="text" id="name" class="delivery-details-input" required>
+                    <label for="district" class="delivery-label">Address</label>
+                </div>
+                <div class="delivery-details-input-sec">
+                    <input name="district" type="text" id="name" class="delivery-details-input" required>
+                    <label for="name" class="delivery-label">District</label>
+                </div>
+
+
+                <input type="text" name="productId" id="" value="{{productId}}" style="display: none;">
+                <input type="text" name="adminId" id="" value="{{adminId}}" style="display: none;">
+
+            </div>
+            <div class="col-sm-6">
+                <h3 class="delivery-payment-details-head">Payment Details</h3>
+                <div class="payment-card-wrapper">
+                    <div class="payment-options-card">
+                        <h6>Total Price :</h6>
+                        <span>
+                            <label class="total-price-delivery-details" for="price">Rs
+                                <input name="price" type="text" value="{{price}}"></label>
+                        </span>
+                        <div class="payment-details-input-sec">
+                            <input type="radio" id="cod" name="paymentMethod" value="COD" required>
+                            <label for="cod">COD</label><br>
+                            <input type="radio" id="online" name="paymentMethod" value="online" required>
+                            <label for="online">Online Payment</label><br>
+                            <div class="order-checkout-sec">
+                                <button class="order-checkout" id="checkout-btn" type="submit">
+                                    Check Out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<style>
+    .orders-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .orders-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .orders-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .orders-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+</style>
+
+
+
+<script>
+    function verfiyPayment(payment, order) {
+        $.ajax({
+            url: '/verifyPayment',
+            method: 'post',
+            data: {
+                payment,
+                order
+            },
+            success: (response) => {
+                if (response.status) {
+                    location.href = '/orders'
+                } else {
+                    alert("Payment Failed")
+                    location.href = '/'
+                }
+            }
+        })
+    }
+
+
+    $("#checkout-form").submit((e) => {
+        document.querySelector('#checkout-btn').style.cursor = "wait";
+        document.querySelector('#checkout-btn').style.borderRadius = "20px";
+        document.querySelector('#checkout-btn').innerHTML = "Loading...";
+        document.querySelector('#checkout-btn').disabled = true;
+        e.preventDefault()
+        $.ajax({
+            url: '/deliveryDetails',
+            method: 'post',
+            data: $('#checkout-form').serialize(), // serialize is for getting all data in form
+            success: (response) => {
+                if (response.codSuccess) {
+                    location.href = '/orders'
+                } else {
+                    razorpayPayment(response);
+                }
+            }
+        })
+    })
+
+    function razorpayPayment(order) {
+        var options = {
+            "key": "rzp_test_4EQQMYs1T5GbHq", // Enter the Key ID generated from the Dashboard
+            "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Homely SHopping",
+            "description": "Test Transaction",
+            "image": "https://raw.githubusercontent.com/SandhuBabu/portfolio/main/images/title-logo.PNG",
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response) {
+                verfiyPayment(response, order)
+            },
+            "prefill": {
+                "name": "Sandhu Babu",
+                "email": "sandhubabu704@gmail.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Homely Corporate Office"
+            },
+            "theme": {
+                "color": "#1b75ea"
+            }
+        };
+
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    }
+
+
+
+</script>

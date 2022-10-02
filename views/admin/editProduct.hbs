@@ -1,0 +1,70 @@
+<div class="container mt-5" style="min-height: 100vh;">
+    <div class="row admin-add-edit-product-row">
+        <h4>Edit Product</h4>
+        <div class="col-md-7 admin-add-edit-product-col">
+            <form action="/admin/edit-product/{{product.productId}}" method="POST" enctype="multipart/form-data"
+                class="add-edit-product-from-admin">
+                <div class="admin-add-edit-product-input-group">
+                    <label for="name" class="admin-add-edit-product-form-labels">Name</label>
+                    <input value="{{product.name}}" type="text" name="name" class="admin-add-edit-product-form-input"
+                        required>
+                </div>
+
+                <div class="admin-add-edit-product-input-group">
+                    <label for="select-category" class="admin-add-edit-product-form-labels">Category</label>
+                    <select name="category" id="select-category" class="admin-add-edit-product-form-input" required>
+                        <option value="0">Select Category</option>
+                        <option name="category" value="Food">Food</option>
+                        <option name="category" value="Furniture">Furniture</option>
+                        <option name="category" value="Craft Works">Craft Works</option>
+                        <option name="category" value="Paintings">Paintings</option>
+                        <option name="category" value="Dress">Dress</option>
+                        <option name="category" value="Jewelery">Jewelery</option>
+                    </select>
+                </div>
+
+                <div class="admin-add-edit-product-input-group">
+                    <label for="price" class="admin-add-edit-product-form-labels">Price</label>
+                    <input value="{{product.price}}" type="text" name="price" class="admin-add-edit-product-form-input"
+                        required>
+                </div>
+
+                <div class="admin-add-edit-product-input-group">
+                    <label for="description" class="admin-add-edit-product-form-labels">Description</label>
+                    <input value="{{product.description}}" type="text" name="description"
+                        class="admin-add-edit-product-form-input" required>
+                </div>
+
+                <div class="admin-add-edit-product-button-sec">
+                    <button type="submit" id="add-edit-product-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<style>
+    .home-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .home-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+</style>

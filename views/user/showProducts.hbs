@@ -1,0 +1,72 @@
+<div class="container" style="min-height: 100vh; margin-top:7em;">
+
+    <div class="row search-product-category-filter-row">
+        <div class="search-category-filter-sort">
+            <div class="search-products-top-categories">
+                <span><a href="/showMore/Food">Food</a></span>
+                <span><a href="/showMore/Jewelery">Jewelery</a></span>
+                <span><a href="/showMore/Dress">Dress</a></span>
+                <span><a href="/showMore/Furniture">Furnitures</a></span>
+                <span><a href="/showMore/Paintings">Paintings</a></span>
+                <span><a href="/showMore/Craft Works">Craft Works</a></span>
+            </div>
+        </div>
+    </div>
+
+
+    {{#if keyword}}
+    <p>Results for : {{keyword}}</p>
+    {{/if}}
+    <div class="row search-product-row">
+
+        {{#each products}}
+        <div class="col-md-3 col-6 search-product-card-col">
+            <div class="search-product-card">
+                <div class="search-product-image-section">
+                    <img src="/productImages/{{this.productId}}.jpg" alt="">
+                </div>
+                <div class="search-product-details">
+                    <h4>{{this.name}}</h4>
+                    <p class="search-product-price">
+                        <i class='bx bx-rupee'></i>
+                        {{this.price}}
+                    </p>
+                    <div class="view-product-link-sec">
+                        <a href="/showProduct/{{this.productId}}" class="view-product-link">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+
+
+
+
+</div>
+
+
+
+<style>
+    .account-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .account-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .account-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .account-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+</style>

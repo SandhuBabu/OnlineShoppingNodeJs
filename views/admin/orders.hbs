@@ -1,0 +1,91 @@
+<div class="container-fluid" style="margin-top: 7em;">
+    <div class="orders">
+        <h4>Your Orders</h4>
+
+        {{#each allOrders}}
+        <div class="row orders-row all-orders">
+            <div class="col-md-6 product-details">
+                <div class="product-image">
+                    <img src="/productImages/{{this.productId}}.jpg" alt="image">
+                </div>
+                <div class="product-description">
+                    <h6>{{this.productName}}</h6>
+                    <p> <span>Rs: {{this.price}}</span></p>
+                    <p>Address : {{this.address}}</p>
+                    <p>District : {{this.district}}</p>
+                </div>
+            </div>
+            <div class="col-md-6 order-details">
+                <h6>Ordered on {{this.date}}</h6>
+                <p><span>Payment Method : {{this.payment_method}}</span></p>
+                <p><span id="order-status">Order status : {{this.status}}</span></p>
+
+                <select name="changeStatus" id="change-status" onchange="changeStatus({{this.orderid}})">
+                    <option value="0">Change Order Status</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                </select>
+
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+
+<style>
+    .orders-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .orders-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .orders-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .orders-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+
+    #change-status {
+        padding: .5em 1.5em;
+        outline: none !important;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+    function changeStatus(orderId) {
+        let newStatus = document.querySelector('#change-status').value;
+        
+        if (newStatus == 0)
+            return
+
+        $.ajax({
+            url: '/admin/changeOrderStatus',
+            method: 'post',
+            data: {
+                orderId,
+                newStatus
+            },
+            success: (response) => {
+                if(response.status) {
+                    $('#order-status').text('Order status :'+newStatus)
+                } else {
+                    alert('Failed to change order status')
+                }
+            }
+        })
+
+
+    }
+</script>

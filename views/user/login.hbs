@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row mt-5 p-2" style="min-height: 80vh;">
+        <div class="col-md-3  login-signup-left">
+            <div class="login-signup-left-text">
+                <h2>Login</h2>
+                <p>
+                    We do not share your
+                    <br>
+                    personal details with anyone
+                </p>
+            </div>
+            <div class="login-signup-image">
+                <img src="/staticImages/loginSignUp.png" alt="image">
+            </div>
+        </div>
+        <div class="col-md-6 login-signup-right">
+            <form action="/login" method="POST" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" name="email" class="form-input" required>
+                    <label for="email" class="form-labels">Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" class="form-input password-inp" required>
+                    <label for="password" class="form-labels">Password</label>
+                    <i class='bx bx-low-vision show-hide-password' onclick="showOrHidePassword()"></i>
+                </div>
+                {{#if loginErr}}
+                <p class="login-error">{{loginErr}}</p>
+                {{/if}}
+
+                <div class="terms-and-policy">
+                    <p>
+                        By continuing, you agree to Homely's Terms of Use and Privacy Policy.
+                    </p>
+                </div>
+
+                <div class="button-sec">
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="link-to-signup-login mt-1">
+                    <a href="/signup" class="text-center">
+                        New to homely? Signup
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+<div class="container pt-5 pb-5" style="min-height: 100vh;">
+    <div class="row" style="padding-top: 7em;">
+        <div class="col-md-6">
+            <div class="xzoom-container">
+                <img src="/productImages/{{productDetails.productId}}.jpg" class="xzoom">
+                <div class="xzoom-thumbs">
+                </div>
+            </div>
+
+            <div class="order-cart-btns">
+                <button class="add-cart-btn"
+                    onclick="addToCart('{{user.name}}', {{productDetails.productId}}, '{{productDetails.name}}', {{productDetails.price}})">SAVE ITEM</button>
+                <a href="/cart" class="goto-cart">VIEW WISHLIST</a>
+                <a class="buy-now"
+                    href="/deliveryDetails/{{productDetails.price}}/{{productDetails.productId}}/{{productDetails.adminId}}/{{productDetails.name}}">BUY
+                    NOW</a>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="description">
+                <h1>{{productDetails.name}}</h1>
+                <p class="assured-delivery-charges">Homely assured products</p>
+                <span>
+                    <i class='bx bx-rupee'></i>
+                    {{productDetails.price}}
+                </span>
+
+                <p class="category-show-product">
+                    <i class='bx bx-category'></i>
+                    {{productDetails.category}}
+                </p>
+
+                <p class="assured-delivery-charges">
+                    No extra delivery charges
+                </p>
+
+
+                <p>Available Payment Methods</p>
+                <ul class="payment-options-show-product">
+                    <li>Cash On Delivery (COD)</li>
+                    <li>Online Payment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#if reviews}}
+<div class="container">
+    <div class="row">
+        <div class="col-12 reviews-col-show-product">
+            <h4>Reviews</h4>
+
+            <ul class="reviews-by-users">
+                {{#each reviews}}
+                <li>{{this.review}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+<style>
+    .reviews-col-show-product {
+        padding-top: 5em;
+    }
+
+    .reviews-col-show-product h4 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .reviews-by-users {
+        width: 100%;
+        padding: 2em 1em;
+    }
+
+    .reviews-by-users li {
+        margin-left: 2em;
+        margin-top: 1em;
+    }
+
+    .reviews-by-users li::marker {
+        content: "➡️";
+    }
+</style>
+
+
+
+
+<style>
+    .home-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .home-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+</style>
+
+
+<script>
+
+    $(function () {
+        $(".xzoom, .xzoom-gallery").xzoom({
+            zoomWidth: 600,
+            zoomHeight: 600,
+            tint: "#fff",
+            Xoffset: 15
+        });
+    });
+</script>
+
+
+<script>
+
+
+
+    var productId = "{{productDetails.productId}}"
+    var imgCount = "{{productDetails.imgCount}}"
+
+    var xThumbs = document.querySelector('.xzoom-thumbs')
+
+    for (i = 0; i < imgCount; i++) {
+        elementA = document.createElement('a')
+        elementImg = document.createElement('img')
+        if (i === 0) {
+            elementA.href = '/productImages/' + productId + '.jpg'
+            elementImg.className = 'xzoom-gallery';
+            elementImg.src = '/productImages/' + productId + '.jpg';
+            xThumbs.appendChild(elementA)
+            elementA.appendChild(elementImg)
+        } else {
+            elementA.href = '/productImages/product' + productId + i + '.jpg';
+            elementImg.className = "xzoom-gallery"
+            elementImg.src = '/productImages/product' + productId + i + '.jpg';
+            xThumbs.appendChild(elementA)
+            elementA.appendChild(elementImg)
+
+        }
+    }
+</script>

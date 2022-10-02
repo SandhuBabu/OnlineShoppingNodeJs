@@ -1,0 +1,77 @@
+<div class="container" style="min-height: 100vh;">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="profile-picture-section">
+                <div class="username">
+                    <span>Hello,</span>
+                    <br> {{admin.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row user-address-row">
+        <div class="col-md-6">
+            <div class="user-details">
+                <span>Admin Id,</span>
+                <br> {{admin.adminId}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="user-details">
+                <span>Email Address,</span>
+                <br> {{admin.email}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="user-details">
+                <span>Phone Number,</span>
+                <br> {{admin.phone}}
+            </div>
+        </div>
+    </div>
+
+    <div class="edit-user-details">
+        <button id="show-edit-popup" onclick="showEditPopUp()"></i>Edit</button>
+    </div>
+
+    <div class="row confirm-popup-edit-row">
+        <div class="col-md-12 popup-col">
+            <div class="confirm-edit-popup">
+                <p>
+                    Are you sure to edit details?
+                </p>
+                <div class="buttons-sec-pop-up">
+                    <a href="/admin/editDetails" class="popup-btns" onclick="closePopUp()">Edit</a>
+                    <button onclick="closePopUp()" class="popup-btns">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<style>
+    .account-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .account-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .account-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .account-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+</style>

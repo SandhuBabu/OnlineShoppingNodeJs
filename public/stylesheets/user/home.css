@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: .7em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c1c7ce;
+    border-radius: 25px;
+}
+
+
+/* category section */
+.home-page-category-section {
+    box-shadow: rgba(0, 0, 0, 0.413) 0px 20px 25px -20px;
+}
+
+.home-page-category {
+    height: 5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+
+.home-page-category-items {
+    width: 6em;
+    height: 100%;
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+.home-page-category img {
+    width: 100%;
+    height: 78%;
+    object-fit: contain;
+    transform: scale(.7);
+}
+
+.home-page-category p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    line-height: 1em;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.home-page-category-items:hover {
+    color: #1b75ea;
+    transform: scale(.9);
+}
+
+/* category section */
+
+
+
+
+
+/* swipper js css */
+.swiper {
+    width: 100%;
+    height: 20em;
+    user-select: none;
+    margin-top: 1em;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    opacity: 0;
+}
+
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+    opacity: 1;
+    color: #fff;
+}
+
+.swiper:hover .swiper-button-prev:hover,
+.swiper:hover .swiper-button-next:hover {
+    color: #1b75ea;
+}
+
+.swiper .swiper-pagination-bullet {
+    background-color: #fff;
+    width: 1em;
+    height: .3em;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: #1b75ea;
+}
+
+/* swipper js css */
+
+
+
+
+
+/* new arrival section */
+.new-section {
+    padding: 0 1em 1em 1em;
+    margin-top: 1em;
+    background-color: rgb(248, 247, 247);
+}
+
+.new-arrival-col {
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1em;
+    margin-top: 10px;
+}
+
+.new-arrival-card {
+    width: 100%;
+    max-height: 100%;
+    border-radius: 1em;
+    background-color: #ebbc2f;
+}
+
+.new-arrival-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    object-fit: inherit;
+}
+
+/* new arrival section */
+
+
+
+
+
+/*top-for-you-section */
+.top-for-you-section {
+    width: 100%;
+    margin-top: 2em;
+    padding: 0 1em 1em 1em;
+    position: relative;
+}
+
+.top-for-you-row {
+    position: relative;
+}
+
+.home-page-card-col {
+    margin-top: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-card {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.home-page-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    aspect-ratio: (1 / 1);
+    transform: scale(.9);
+}
+
+.home-page-card p {
+    font-size: 1.2em;
+    position: relative;
+    top: -1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.view-product-link-sec-home {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    transition: all 300ms ease-in;
+    background-color: #1b75ea3a;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    ;
+}
+
+.view-product-btn-home-page {
+    text-align: center;
+    padding: .6em 1em .6em 1em;
+    border-radius: 0px 15px 0px 15px;
+    background-color: #ff5500c4;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    float: right;
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: .5em;
+    right: 0;
+}
+
+.view-product-link-sec-home .view-product-btn-home-page {
+    text-decoration: none;
+}
+
+.view-product-btn-home-page:hover {
+    background-color: #ff5500;
+    color: #fff;
+}
+
+.home-page-card:hover .view-product-link-sec-home {
+    top: 0;
+}
+
+.show-more-home-page {
+    font-size: 14px;
+    color: #1b75ea;
+    text-decoration: none;
+    margin: 1em 1em 0 0;
+    transition: all 200ms;
+    position: absolute;
+    right: 0em;
+    bottom: -1em;
+}
+
+.show-more-home-page:hover {
+    color: #1b75ea;
+}
+
+/* top-for-you-section */
+
+
+
+
+
+/* top-for-you-section */
+.shop-by-price {
+    margin-top: 2em;
+    padding: 0 1em 1em 1em;
+}
+
+.shop-by-price-card {
+    margin-top: .5em;
+    width: 100%;
+    height: 10em;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    flex-shrink: 3;
+}
+
+.shop-by-price-card h2 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+    color: rgba(50, 43, 43, 0.883);
+}
+
+.price-card-1 {
+    background-color: #2cd2f1;
+}
+
+.price-card-1:hover {
+    background-color: #2cd3f1bc;
+}
+
+.price-card-2 {
+    background-color: #ff8490;
+}
+
+.price-card-2:hover {
+    background-color: #ff8490c9;
+}
+
+.price-card-3 {
+    background-color: #43a1fe;
+}
+
+.price-card-3:hover {
+    background-color: #43a1febe;
+}
+
+.price-card-4 {
+    background-color: #ebbc2f;
+}
+
+.price-card-4:hover {
+    background-color: #ebbc2fc8;
+}
+
+.shop-by-price-link,
+.shop-by-price-link:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+/* top-for-you-section */
+
+
+
+
+
+
+/* media for swipper */
+@media only screen and (max-width: 600px) {
+    .swiper {
+        height: 13em;
+    }
+
+    .offer-cards-col {
+        height: 10em;
+    }
+}
+
+/* media for swipper */

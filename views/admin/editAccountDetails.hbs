@@ -1,0 +1,71 @@
+<div class="container" style="margin-top: 7em; min-height:100vh;">
+    <form action="/admin/editDetails" method="post" class="payment-details-form">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3 class="delivery-payment-details-head">Edit Details</h3>
+                <div class="delivery-details-input-sec">
+                    <input type="text" name="name" class="delivery-details-input" value="{{admin.name}}" required>
+                    <label for="name" class="delivery-label">Name</label>
+                </div>
+                <div class="delivery-details-input-sec">
+                    <input type="text" name="email" class="delivery-details-input" value="{{admin.email}}" required>
+                    <label for="email" class="delivery-label">Email Address</label>
+                </div>
+                <div class="delivery-details-input-sec">
+                    <input type="text" name="phone" class="delivery-details-input" value="{{admin.phone}}" required>
+                    <label for="phone" class="delivery-label">Mobile Number</label>
+                </div>
+                <input type="text" name="adminId" id="" value="{{admin.adminId}}" style="display: none;">
+                <div class="details-btn-sec">
+                    <button type="submit" class="submit-user-details">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .details-btn-sec {
+        width: 100%;
+        margin: 2em 0 2em 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .submit-user-details {
+        width: 60%;
+        height: 2.5em;
+        border: none;
+        outline: none !important;
+        border-radius: 5px;
+        background-color: #1b75ea;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .submit-user-details:hover {
+        background-color: #1b75eac9;
+    }
+
+    .account-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .account-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .account-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .account-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+</style>

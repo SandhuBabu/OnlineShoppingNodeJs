@@ -1,0 +1,74 @@
+<div class="container-fluid" style="margin-top: 7em; min-height: 100vh;">
+
+    <h4 class="cart-heading">Items In Whistlist</h4>
+    {{!-- <h4 class="cart-limit">(Maximum you can add 5 products to cart)</h4> --}}
+    <div class="row cart-row">
+
+        {{#each products}}
+        <div class="col-md-3 col-6 cart-col">
+            <div class="cart-card">
+                <div class="cart-product-image-section">
+                    <img src="/productImages/{{this.productId}}.jpg" alt="">
+                </div>
+                <div class="cart-product-details">
+                    <h6 class="proname">{{this.productName}}</h6>
+                    <p class="price">{{this.price}}</p>
+                    <div class="remove-btn-sec">
+                        <a href="/deleteCartItem/{{this.productId}}" id="remove-from-cart">Remove</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+</div>
+
+<style>
+    .cart-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .cart-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .cart-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .cart-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+
+    .price {
+        font-size: 14px;
+        text-align: center;
+    }
+</style>
+
+<script>
+    let placeOrder = document.querySelector('.total-price-order-row')
+    let cartHeading = document.querySelector('.cart-heading')
+    let list = document.querySelectorAll('.price')
+    let totalCartPrice = document.querySelector('.totalCartPrice')
+    let totalPrice = 0
+    let prices = []
+    for (i = 0; i < list.length; i++) {
+        prices[i] = parseInt(list[i].textContent)
+        totalPrice += parseInt(list[i].textContent)
+    }
+
+    if (totalPrice == 0) {
+        placeOrder.style.display = 'none'
+        cartHeading.innerHTML = "Cart Is Empty"
+    }
+
+    totalCartPrice.innerHTML = totalPrice
+</script>

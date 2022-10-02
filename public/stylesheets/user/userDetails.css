@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=PT+Serif:ital@0;1&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.user-address-row {
+    margin-bottom: 0em;
+}
+
+.profile-picture-section {
+    width: 100%;
+    min-height: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7em;
+}
+
+.image-section-profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section-profile img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image-section-profile label {
+    position: relative;
+}
+
+#change-profile-picture {
+    display: none;
+}
+
+.camera-icon {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fff;
+    background-color: #2874f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1em;
+    left: -1.5em;
+}
+
+.username {
+    margin-left: 1em;
+}
+
+.username,
+.user-details {
+    width: 100%;
+    font-size: 1em;
+    font-family: 'PT Serif', serif;
+    margin-top: 1em;
+    padding: 1em 2em 1em 2em;
+    user-select: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.221);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.username:hover,
+.user-details:hover {
+    background-color: rgba(229, 229, 229, 0.305);
+}
+
+.username span,
+.user-details span {
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.edit-user-details {
+    width: 100%;
+    padding-right: 1em;
+    margin: 2em 0 2em 0;
+}
+
+.edit-user-details button {
+    float: right;
+    color: #fff;
+    background-color: #2875f0cd;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 5px;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.edit-user-details a i {
+    margin-right: .3em;
+}
+
+.confirm-popup-edit-row {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.403);
+    backdrop-filter: blur(2px);
+    z-index: 9999;
+}
+
+.confirm-popup-edit-row .popup-col {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-edit-popup {
+    width: 60%;
+    height: 30%;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.confirm-edit-popup p {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 0 .5em 0 .5em;
+}
+
+.buttons-sec-pop-up {
+    width: 100%;
+    min-height: 2em;
+    position: absolute;
+    bottom: 1em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-btns {
+    text-decoration: none !important;
+    margin-right: 1em;
+    padding: .5em 2em .5em 2em;
+    background-color: rgba(255, 0, 0, 0.811);
+    border: none;
+    outline: none !important;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.buttons-sec-pop-up button:hover {
+    background-color: rgba(255, 0, 0, 0.706);
+}
+
+.buttons-sec-pop-up a {
+    background-color: rgba(255, 0, 0, 0.072);
+    color: red !important;
+}
+
+.buttons-sec-pop-up a:hover {
+    background-color: rgba(255, 0, 0, 0.184);
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .profile-picture-section {
+        display: block;
+    }
+
+    .username {
+        margin-left: 0em;
+    }
+  }

@@ -1,0 +1,261 @@
+<div class="container-fluid" style="margin-top: 8em;">
+
+    {{!-- home all categories --}}
+    <section class="home-page-category-section">
+        <div class="row">
+            <div class="col-md-6 home-page-category">
+                <div class="home-page-category-items">
+                    <a class="home-top-cate-link" href="/showMore/Food">
+                        <img src="https://www.pngall.com/wp-content/uploads/7/Bakery-Items-PNG-Picture.png" alt="">
+                        <p>Foods</p>
+                    </a>
+                </div>
+                <div class="home-page-category-items">
+                    <a class="home-top-cate-link" href="/showMore/Jewelery">
+                        <img src="https://pluspng.com/img-png/imitation-jewellery-png-affordable-one-gram-gold-jewellery-in-india-797.png"
+                            alt="">
+                        <p>Jewelery</p>
+                    </a>
+                </div>
+                <div class="home-page-category-items">
+                    <a class="home-top-cate-link" href="/showMore/Dress">
+                        <img src="https://pngimg.com/uploads/dress/dress_PNG168.png" alt="">
+                        <p>Dress</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 home-page-category">
+                <div class="home-page-category-items">
+                    <a class="home-top-cate-link" href="/showMore/Furniture">
+                        <img src="https://freepngimg.com/thumb/aquarium/45531-6-bamboo-furniture-image-png-download-free.png"
+                            alt="">
+                        <p>Furnitures</p>
+                    </a>
+                </div>
+                <div class="home-page-category-items">
+                    <a class="home-top-cate-link" href="/showMore/Paintings">
+                        <img src="https://pngimg.com/uploads/chakra/chakra_PNG88.png" alt="">
+                        <p>Paintings</p>
+                    </a>
+                </div>
+                <div class="home-page-category-items">
+                    <a class="home-top-cate-link" href="/showMore/Craft Works">
+                        <img src="https://i.pinimg.com/originals/d1/33/ca/d133ca6e15ddc775bedc6a2ba2c0af7f.png" alt="">
+                        <p>Craft Works</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {{!-- swipperJS Image Slider --}}
+    <section>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/swipperImages/maxresdefault.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/556911.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/Bandai-Best-Hit-Chronicle-1-1-Cup-Noodle-Model-Kit-Featured-image-1568x882.jpg"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/Combined-clothes.webp" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/futuristic-office-furniture-3d-model-max-fbx.webp" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/niki-1-seater-sofa-in-yellow-colour-by-febonic-niki-1-seater-sofa-in-yellow-colour-by-febonic-lnozyt.webp"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/Thanksgiving-169-banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/swipperImages/thumb-1920-424603.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    {{!-- New Arrivals --}}
+    <section class="new-section">
+        <h4>New Arrivals</h4>
+        <div class="row">
+            {{#each newProducts}}
+            <div class="col-md-4 new-arrival-col">
+                <a href="/showProduct/{{this.productId}}">
+                    <div class="new-arrival-card">
+                        <img src="productImages/{{this.productId}}.jpg">
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+    {{!-- food for you --}}
+    <section class="top-for-you-section">
+        <h4>Foods For You</h4>
+        <div class="row top-for-you-row">
+            {{#each cakes}}
+            <div class="col-sm-3 col-6 home-page-card-col">
+                <div class="home-page-card">
+                    <img src="productImages/{{this.productId}}.jpg">
+                    <p>{{this.price}}</p>
+                    <div class="view-product-link-sec-home">
+                        <a href="/showProduct/{{this.productId}}" class="view-product-btn-home-page">View Product</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <a href="/showMore/Food" class="show-more-home-page">show more</a>
+    </section>
+
+
+    {{!-- funitures for you --}}
+    <section class="top-for-you-section">
+        <h4>Furnitures For You</h4>
+        <div class="row top-for-you-row">
+            {{#each furnitures}}
+            <div class="col-sm-3 col-6 home-page-card-col">
+                <div class="home-page-card">
+                    <img src="productImages/{{this.productId}}.jpg">
+                    <p>{{this.price}}</p>
+                    <div class="view-product-link-sec-home">
+                        <a href="/showProduct/{{this.productId}}" class="view-product-btn-home-page">View Product</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <a href="/showMore/Furniture" class="show-more-home-page">show more</a>
+    </section>
+
+
+    {{!-- paintings for you --}}
+    <section class="top-for-you-section">
+        <h4>Paintings For You</h4>
+        <div class="row top-for-you-row">
+            {{#each paintings}}
+            <div class="col-sm-3 col-6 home-page-card-col">
+                <div class="home-page-card">
+                    <img src="productImages/{{this.productId}}.jpg">
+                    <p>{{this.price}}</p>
+                    <div class="view-product-link-sec-home">
+                        <a href="/showProduct/{{this.productId}}" class="view-product-btn-home-page">View Product</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <a href="/showMore/Paintings" class="show-more-home-page">show more</a>
+    </section>
+
+
+    {{!-- shop by price --}}
+    <section class="shop-by-price">
+        <h4>Shop By Price</h4>
+        <div class="row">
+            <div class="col-sm-3 col-6">
+                <a href="/shopByPrice/99" class="shop-by-price-link">
+                    <div class="shop-by-price-card price-card-1">
+                        <h2>Under 99</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-6">
+                <a href="/shopByPrice/199" class="shop-by-price-link">
+                    <div class="shop-by-price-card price-card-2">
+                        <h2>Under 199</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-6">
+                <a href="/shopByPrice/499" class="shop-by-price-link">
+                    <div class="shop-by-price-card price-card-3">
+                        <h2>Under 499</h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-6">
+                <a href="/shopByPrice/999" class="shop-by-price-link">
+                    <div class="shop-by-price-card price-card-4">
+                        <h2>Under 999</h2>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+
+<style>
+    .home-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .home-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+
+    .home-top-cate-link {
+        color: #000 !important;
+    }
+
+    .home-top-cate-link:hover {
+        color: #1b75ea !important;
+    }
+</style>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+{{!-- swipperJS initialising scrip --}}
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>

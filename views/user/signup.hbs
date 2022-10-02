@@ -1,0 +1,67 @@
+<div class="container-fluid" style="margin-top: 3em;">
+    <div class="row float-center mt-4 p-2" style="min-height: 90vh;">
+        <div class="col-md-3  login-signup-left">
+            <div class="login-signup-left-text">
+                <h2>Signup</h2>
+                <p>
+                    We do not share your
+                    <br>
+                    personal details with anyone
+                </p>
+            </div>
+            <div class="login-signup-image">
+                <img src="/staticImages/loginSignUp.png" alt="image">
+            </div>
+        </div>
+        <div class="col-md-6 login-signup-right">
+            <form action="/signup" method="POST" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" name="name" class="form-input" required>
+                    <label for="name" class="form-labels">Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="phone" class="form-input" required>
+                    <label for="phone" class="form-labels">Phone Number</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="email" class="form-input" required>
+                    <label for="email" class="form-labels">Email Address</label>
+                </div>
+
+                <div class="input-group-gender">
+                    <span>Gender</span>
+                    <input type="radio" id="male" name="gender" value="m" required>
+                    <label for="gender">Male</label>
+                    <input type="radio" id="female" name="gender" value="f" required>
+                    <label for="gender">Female</label>
+                    <input type="radio" id="others" name="gender" value="o" required>
+                    <label for="gender">Others</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" class="form-input password-inp" required>
+                    <label for="password" class="form-labels">Password</label>
+                    <i class='bx bx-low-vision show-hide-password' onclick="showOrHidePassword()"></i>
+                </div>
+
+                <div class="terms-and-policy">
+                    <p>
+                        By continuing, you agree to Homely's Terms of Use and Privacy Policy.
+                    </p>
+                </div>
+
+                <div class="button-sec">
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="link-to-signup-login mt-1">
+                    <a href="/login" class="text-center">
+                        Existing user? Login
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

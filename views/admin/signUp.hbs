@@ -1,0 +1,66 @@
+<div class="container-fluid mt-5" style="min-height: 100vh;">
+    <div class="row mt-4 p-2" style="min-height: 80vh;">
+        <div class="col-md-3  admin-login-signup-left">
+            <div class="admin-login-signup-left-text">
+                <h2>Signup As Admin</h2>
+                <p>
+                    Let your skills pay you !!!
+                </p>
+            </div>
+            <div class="admin-login-signup-image">
+                <img src="/staticImages/loginSignUp.png" alt="image">
+            </div>
+        </div>
+        <div class="col-md-6 admin-login-signup-right">
+            <form action="/admin/signup" method="post" autocomplete="off">
+                <div class="admin-input-group">
+                    <input type="text" name="name" class="admin-form-input" required>
+                    <label for="name" class="admin-form-labels">Name</label>
+                </div>
+
+                <div class="admin-input-group">
+                    <input type="text" name="email" class="admin-form-input" required>
+                    <label for="email" class="admin-form-labels">Email Address</label>
+                </div>
+
+                <div class="admin-input-group">
+                    <input type="text" name="phone" class="admin-form-input" required>
+                    <label for="phone" class="admin-form-labels">Phone Number</label>
+                </div>
+
+                <div class="input-group-gender">
+                    <span>Gender</span>
+                    <input type="radio" id="male" name="gender" value="m" required>
+                    <label for="gender">Male</label>
+                    <input type="radio" id="female" name="gender" value="f" required>
+                    <label for="gender">Female</label>
+                    <input type="radio" id="others" name="gender" value="o" required>
+                    <label for="gender">Others</label>
+                </div>
+
+                <div class="admin-input-group">
+                    <input type="password" name="password" class="admin-form-input admin-password-inp" required>
+                    <label for="password" class="admin-form-labels">Password</label>
+                </div>
+
+                <div class="admin-terms-and-policy">
+                    <p>
+                        By continuing, you agree to Homely's Terms of Use and Privacy Policy.
+                    </p>
+                </div>
+
+                <div class="admin-button-sec">
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="admin-link-to-signup-login mt-1 mb-3">
+                    <a href="/admin/login" class="text-center">
+                        Existing admin? Login
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/script.js"></script>

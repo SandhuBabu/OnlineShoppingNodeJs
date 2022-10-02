@@ -1,0 +1,88 @@
+<div class="container-fluid" style="min-height: 100vh; padding:0 3em;">
+    <div class="row add-option-row">
+        <input type="checkbox" name="check-add-cart-item" id="check-add-cart-item">
+        <label for="check-add-cart-item" id="admin-add-product-category">
+            <i class='bx bx-plus add-plus-sign'></i>
+        </label>
+        <a title="Add Product" class="add-item add-item-category" href="/admin/add-product">
+            <i class='bx bx-list-plus  add-options'></i>
+        </a>
+
+    </div>
+
+    <div class="row all-products-header">
+        <h4>All Products</h4>
+    </div>
+    <table class="table table-hover mt-5 " id="all_products-table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price(Rs)</th>
+                <th scope="col">Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.description}}</td>
+                <td> {{this.price}}</td>
+                <td>
+                    <img style="width:50px; height:50px" src="productImages/{{this.productId}}.jpg" alt="image">
+                </td>
+                <td>
+                    <a href="/admin/edit-product/{{this.productId}}" class="btn btn-primary admin-productedit-btn">
+                        Edit
+                    </a>
+                </td>
+                <td>
+                    <a href="/admin/delete-product/{{this.productId}}/{{this.imgCount}}" class="btn delete-product-btn"
+                        onclick="return confirm('Are you sure to delete product: {{this.name}}?')">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .home-sidebar {
+        background-color: #1b75ea25;
+    }
+
+    .home-sidebar .menu-name {
+        font-weight: 900;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .menu-icons {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        font-weight: 500;
+        color: #1b75ea;
+    }
+
+    .home-sidebar .sidebar-round-span {
+        display: block;
+        opacity: 1;
+    }
+
+    table{
+        width: 100%;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        $('#all_products-table').DataTable();
+    });
+</script>
